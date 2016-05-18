@@ -25,7 +25,7 @@ initialHy <- function(df, Atgt, Acmp,
     if(length(Atgt_cl) != length(Atgt_dist)) stop("length(Atgt_cl) not equal length(Atgt_dist)")
     if(length(Acmp_cl) != length(Acmp_dist)) stop("length(Acmp_cl) not equal length(Acmp_dist)")
 
-    require(magrittr)
+    if(!require(magrittr)) stop("magrittr pkg not installed.")
 
     # 1. HyType()
     Atgt_type   <- ifelse(is.factor(df[,Atgt]),"cate", "num")
